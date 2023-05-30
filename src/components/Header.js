@@ -6,7 +6,7 @@ function Header () {
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
             <div class="container-fluid">
                 <NavLink class="navbar-brand" href="#">
-                    <img class="logo" src="books.png" alt="Mybrary Books" width="75" height="75" />
+                    <img class="logo" src="logo.png" alt="Mybrary Books" width="75" height="75" />
                 </NavLink>
 
                 <div class="nav justify-content-end" id="navbarToggleExternalContent">
