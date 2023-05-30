@@ -2,7 +2,7 @@ import { React } from "react";
 
 function AboutSection () {
     return (
-        <div>This is the about section</div>
+        <div class="container-fluid text-center">This is the about section</div>
     );
 }
 

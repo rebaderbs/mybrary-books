@@ -5,7 +5,7 @@ function Header () {
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">
-                    <img class="logo" src="books.png" alt="Mybrary Books" width="75" height="75" />
+                    <img src="books.png" alt="Mybrary Books" width="75" height="75" />
                 </a>
 
                 <div class="nav justify-content-end" id="navbarToggleExternalContent">

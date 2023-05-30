@@ -2,7 +2,7 @@ import { React } from "react";
 
 function CallToActionSection () {
     return (
-        <div>This is the call to action section</div>
+        <div class="container-fluid text-center">This is the call to action section</div>
     );
 }
 
