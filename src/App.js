@@ -1,6 +1,6 @@
 import './App.css';
 import React from "react";
-import Header from "./components/Header";
+import Header from "./components/MainHeader";
 import LandingSection from "./components/LandingSection";
 import AboutSection from "./components/AboutSection";
 import CallToActionSection from "./components/CallToActionSection";

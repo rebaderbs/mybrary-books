@@ -16,7 +16,7 @@ import { Route, Routes } from 'react-router-dom';
 //   toolId: "nkarbna"
 // });
 
-function Header () {
+function MainHeader () {
     return (
 <>
             <nav class="navbar navbar-expand-lg bg-body-tertiary">
@@ -46,4 +46,4 @@ function Header () {
     );
 }
 
-export default Header;
+export default MainHeader;

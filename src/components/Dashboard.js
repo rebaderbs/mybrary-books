@@ -5,6 +5,7 @@ import Userfront from "@userfront/react";
 function Dashboard() {
 
     const userData = JSON.stringify(Userfront.user, null, 2);
+    
     return (
       <div>
         <h2>Dashboard</h2>
