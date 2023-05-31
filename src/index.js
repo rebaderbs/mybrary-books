@@ -4,11 +4,33 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.css';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Userfront from "@userfront/react";
+import Dashboard from './components/Dashboard';
+
+Userfront.init("pn458jpb");
+
+const SignupForm = Userfront.build({
+  toolId: "mlnrkml"
+});
+
+const LoginForm = Userfront.build({
+  toolId: "nkarbna"
+});
+
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+      <Routes>
+        <Route path="" element={ <App /> }></Route>
+        <Route path='/login' element={<LoginForm/>} />
+        <Route path='/signup' element={<SignupForm/>} />
+        <Route path='dashboard/*' element={<Dashboard/>} />
+      </Routes>
+    </BrowserRouter>
   </React.StrictMode>
 );
 

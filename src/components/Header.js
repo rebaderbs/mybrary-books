@@ -1,11 +1,24 @@
 import { React } from "react";
 import { NavLink } from "react-bootstrap";
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import Login from "./Login"
+import { Link } from 'react-router-dom';
+import Userfront from "@userfront/react";
+import Dashboard from "./Dashboard";
+import { Route, Routes } from 'react-router-dom';
+
+
+// Userfront.init("pn458jpb");
+
+// const SignupForm = Userfront.build({
+//   toolId: "mlnrkml"
+// });
+
+// const LoginForm = Userfront.build({
+//   toolId: "nkarbna"
+// });
 
 function Header () {
     return (
-        <Router>
+<>
             <nav class="navbar navbar-expand-lg bg-body-tertiary">
                 <div class="container-fluid">
                     <NavLink class="navbar-brand" href="#">
@@ -24,10 +37,12 @@ function Header () {
                     </div>
                 </div>
             </nav>
-            <Routes>
-                <Route path='/login' element={<Login/>} />
-            </Routes>
-        </Router>
+            {/* <Routes>
+                <Route path='/login' element={<LoginForm/>} />
+                <Route path='/signup' element={<SignupForm/>} />
+                <Route path='/dashboard' element={<Dashboard/>} />
+            </Routes> */}
+            </>
     );
 }
 
