@@ -1,17 +1,20 @@
 import React from "react";
 import { Route, Routes, Navigate } from "react-router-dom";
 import Userfront from "@userfront/react";
+import UserHeader from "./UserHeader";
 
 function Dashboard() {
 
     const userData = JSON.stringify(Userfront.user, null, 2);
-    
+
     return (
+        <>
+        <UserHeader />
       <div>
         <h2>Dashboard</h2>
         <pre>{userData}</pre>
-        <button onClick={Userfront.logout}>Logout</button>
       </div>
+      </>
     );
 
     function renderFn({ location }) {
