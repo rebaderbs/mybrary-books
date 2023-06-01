@@ -1,13 +1,13 @@
 import './App.css';
 import React from "react";
-import Header from "./components/MainHeader";
-import LandingSection from "./components/LandingSection";
-import AboutSection from "./components/AboutSection";
-import CallToActionSection from "./components/CallToActionSection";
-import Footer from "./components/Footer";
+import Header from "./components/HomePage/MainHeader";
+import LandingSection from "./components/HomePage/LandingSection";
+import AboutSection from "./components/HomePage/AboutSection";
+import CallToActionSection from "./components/HomePage/CallToActionSection";
+import Footer from "./components/HomePage/Footer";
 import Userfront from "@userfront/react";
 import { Route, Routes } from 'react-router-dom';
-import Dashboard from './components/Dashboard';
+import Dashboard from './components/UserPage/Dashboard';
 
 // Userfront.init("pn458jpb");
 

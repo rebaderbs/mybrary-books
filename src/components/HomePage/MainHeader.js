@@ -2,7 +2,7 @@ import { React } from "react";
 import { NavLink } from "react-bootstrap";
 import { Link } from 'react-router-dom';
 import Userfront from "@userfront/react";
-import Dashboard from "./Dashboard";
+import Dashboard from "../UserPage/Dashboard";
 import { Route, Routes } from 'react-router-dom';
 
 

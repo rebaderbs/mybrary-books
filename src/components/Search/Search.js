@@ -1,7 +1,7 @@
 import React, { useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useGlobalContext } from "../../context";
-import UserHeader from "../UserHeader";
+import UserHeader from "../UserPage/UserHeader";
 
 const Search = () => {
     const {setSearchTerm, setResultTitle} = useGlobalContext();

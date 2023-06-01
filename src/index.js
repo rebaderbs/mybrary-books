@@ -6,12 +6,13 @@ import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Userfront from "@userfront/react";
-import Dashboard from './components/Dashboard';
-import MyBooks from './components/MyBooks';
+import Dashboard from './components/UserPage/Dashboard';
+import MyBooks from './components/UserPage/MyBooks';
 import Search from './components/Search/Search';
 import BookList from './components/BookList/BookList';
 import BookDetails from './components/BookDetails/BookDetails';
 import { AppProvider } from './context';
+import Book from './components/BookList/Book';
 
 Userfront.init("pn458jpb");
 
@@ -37,8 +38,8 @@ root.render(
         <Route path='dashboard/*' element={<Dashboard/>} />
         <Route path='/mybooks' element={<MyBooks/>} />
         <Route path='/search' element={<Search/>} />
-        <Route path='/book' element={<BookList/>} />
-        <Route path='/book/:id' element={<BookDetails/>} />
+        <Route path='/books' element={<BookList/>} />
+        <Route path='/books/:id' element={<BookDetails/>} />
 
       </Routes>
     </BrowserRouter>
