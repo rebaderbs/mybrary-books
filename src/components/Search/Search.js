@@ -2,6 +2,7 @@ import React, { useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useGlobalContext } from "../../context";
 import UserHeader from "../UserPage/UserHeader";
+import { Heading, VStack } from "@chakra-ui/react";
 
 const Search = () => {
     const {setSearchTerm, setResultTitle} = useGlobalContext();
@@ -21,12 +22,14 @@ const Search = () => {
         else {
             setSearchTerm(searchText.current.value);
         }
-        navigate("/book");
+        navigate("/books");
     };
 
     return (
         <>
         <UserHeader/>
+        <VStack spacing={8} p={8}>
+            <Heading>Search for a book:</Heading>
         <div className='search-form'>
             <div className='container'>
                 <div className="search-form-body">
@@ -48,6 +51,7 @@ const Search = () => {
                 </div>
             </div>
         </div>
+        </VStack>
         </>
     );
 }
