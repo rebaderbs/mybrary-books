@@ -13,6 +13,7 @@ import BookList from './components/BookList/BookList';
 import BookDetails from './components/BookDetails/BookDetails';
 import { AppProvider } from './context';
 import Book from './components/BookList/Book';
+import { ChakraProvider, extendTheme } from '@chakra-ui/react';
 
 Userfront.init("pn458jpb");
 
@@ -25,10 +26,26 @@ const LoginForm = Userfront.build({
 });
 
 
+const theme = extendTheme({ 
+  colors: {
+    primary: {
+      light: "#3d5b5d",
+      main: "#2a3f41",
+      dark: "637b7d",
+      },
+    secondary: {
+      light: "#f2eddb",
+      main: "#a9a599",
+      dark: "#f4f0e2",
+    },
+  }
+ });
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+  <ChakraProvider theme={theme}>
   <AppProvider>
     <BrowserRouter>
       <Routes>
@@ -44,6 +61,7 @@ root.render(
       </Routes>
     </BrowserRouter>
   </AppProvider>
+  </ChakraProvider>
   </React.StrictMode>
 );
 

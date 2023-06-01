@@ -2,12 +2,13 @@ import { React } from "react";
 import { NavLink } from "react-bootstrap";
 import { Link } from 'react-router-dom';
 import Userfront from "@userfront/react";
+import { Box } from "@chakra-ui/react";
 
 // const userData = JSON.stringify(Userfront.user, null, 2);
 
 function UserHeader () {
     return (
-<>
+        <Box bg="primary.main">
             <nav className="navbar navbar-expand-lg bg-body-tertiary">
                 <div className="container-fluid">
                     <NavLink className="navbar-brand" href="#">
@@ -38,7 +39,7 @@ function UserHeader () {
                 <Route path='/signup' element={<SignupForm/>} />
                 <Route path='/dashboard' element={<Dashboard/>} />
             </Routes> */}
-            </>
+        </Box>
     );
 }
 
