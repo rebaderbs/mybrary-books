@@ -19,19 +19,19 @@ import { Route, Routes } from 'react-router-dom';
 function MainHeader () {
     return (
 <>
-            <nav class="navbar navbar-expand-lg bg-body-tertiary">
-                <div class="container-fluid">
-                    <NavLink class="navbar-brand" href="#">
-                        <img class="logo" src="logo.png" alt="Mybrary Books" width="75" height="75" />
+            <nav className="navbar navbar-expand-lg bg-body-tertiary">
+                <div className="container-fluid">
+                    <NavLink className="navbar-brand" href="#">
+                        <img className="logo" src="logo.png" alt="Mybrary Books" width="75" height="75" />
                     </NavLink>
 
-                    <div class="nav justify-content-end" id="navbarToggleExternalContent">
-                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                            <li class="nav-item">
-                                <Link to="/login" class="nav-link">Login</Link>
+                    <div className="nav justify-content-end" id="navbarToggleExternalContent">
+                        <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li className="nav-item">
+                                <Link to="/login" className="nav-link">Login</Link>
                             </li>
-                            <li class="nav-item">
-                                <Link to="/signup" class="nav-link">Sign Up</Link>
+                            <li className="nav-item">
+                                <Link to="/signup" className="nav-link">Sign Up</Link>
                             </li>
                         </ul>
                     </div>

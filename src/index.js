@@ -7,6 +7,11 @@ import 'bootstrap/dist/css/bootstrap.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Userfront from "@userfront/react";
 import Dashboard from './components/Dashboard';
+import MyBooks from './components/MyBooks';
+import Search from './components/Search/Search';
+import BookList from './components/BookList/BookList';
+import BookDetails from './components/BookDetails/BookDetails';
+import { AppProvider } from './context';
 
 Userfront.init("pn458jpb");
 
@@ -23,14 +28,21 @@ const LoginForm = Userfront.build({
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+  <AppProvider>
     <BrowserRouter>
       <Routes>
         <Route path="" element={ <App /> }></Route>
         <Route path='/login' element={<LoginForm/>} />
         <Route path='/signup' element={<SignupForm/>} />
         <Route path='dashboard/*' element={<Dashboard/>} />
+        <Route path='/mybooks' element={<MyBooks/>} />
+        <Route path='/search' element={<Search/>} />
+        <Route path='/book' element={<BookList/>} />
+        <Route path='/book/:id' element={<BookDetails/>} />
+
       </Routes>
     </BrowserRouter>
+  </AppProvider>
   </React.StrictMode>
 );
 

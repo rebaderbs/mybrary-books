@@ -2,33 +2,31 @@ import { React } from "react";
 import { NavLink } from "react-bootstrap";
 import { Link } from 'react-router-dom';
 import Userfront from "@userfront/react";
-import Dashboard from "./Dashboard";
-import { Route, Routes } from 'react-router-dom';
 
-const userData = JSON.stringify(Userfront.user, null, 2);
+// const userData = JSON.stringify(Userfront.user, null, 2);
 
 function UserHeader () {
     return (
 <>
-            <nav class="navbar navbar-expand-lg bg-body-tertiary">
-                <div class="container-fluid">
-                    <NavLink class="navbar-brand" href="#">
-                        <img class="logo" src="logo.png" alt="Mybrary Books" width="75" height="75" />
+            <nav className="navbar navbar-expand-lg bg-body-tertiary">
+                <div className="container-fluid">
+                    <NavLink className="navbar-brand" href="#">
+                        <img className="logo" src="logo.png" alt="Mybrary Books" width="75" height="75" />
                     </NavLink>
 
-                    <div class="nav justify-content-end" id="navbarToggleExternalContent">
-                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <div className="nav justify-content-end" id="navbarToggleExternalContent">
+                        <ul className="navbar-nav me-auto mb-2 mb-lg-0">
 
-                            <li class="nav-item">
-                                <Link to="/search" className="nav-link">Search</Link>
+                            <li className="nav-item">
+                                <Link to="/search" className="nav-link" activeclassname="active" >Search</Link>
                             </li>
-                            <li class="nav-item">
-                                <Link to="/mybooks" className="nav-link">My Books</Link>
+                            <li className="nav-item">
+                                <Link to="/mybooks" className="nav-link" activeclassname="active" >My Books</Link>
                             </li>
-                            <li class="nav-item">
-                                <Link to="/dashboard" className="nav-link">Dashboard</Link>
+                            <li className="nav-item">
+                                <Link to="/dashboard" className="nav-link" activeclassname="active" >Dashboard</Link>
                             </li>
-                            <li class="nav-item">
+                            <li className="nav-item">
                                 <Link onClick={Userfront.logout} className="nav-link">Logout</Link>
                             </li>
                         </ul>
