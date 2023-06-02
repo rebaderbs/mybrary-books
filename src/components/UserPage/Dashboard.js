@@ -1,7 +1,7 @@
 import React from "react";
 import { Route, Routes, Navigate } from "react-router-dom";
 import Userfront from "@userfront/react";
-import UserHeader from "./UserHeader";
+import MyBooks from "./MyBooks";
 
 function Dashboard() {
 
@@ -9,11 +9,11 @@ function Dashboard() {
 
     return (
         <>
-        <UserHeader />
-      <div>
-        <h2>Dashboard</h2>
-        <pre>{userData}</pre>
-      </div>
+        <MyBooks />
+        <div>
+            <h2>Dashboard</h2>
+            <pre>{userData}</pre>
+        </div>
       </>
     );
 
