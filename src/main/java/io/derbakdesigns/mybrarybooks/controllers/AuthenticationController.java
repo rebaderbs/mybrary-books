@@ -23,7 +23,7 @@ public class AuthenticationController {
     @Autowired
     UserRepository userRepository;
 
-    private static final String userSessionKey = "user";
+    static final String userSessionKey = "user";
 
     public User getUserFromSession(HttpSession session) {
         Integer userId = (Integer) session.getAttribute(userSessionKey);

@@ -6,9 +6,12 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 
@@ -32,9 +35,8 @@ public class User extends AbstractEntity{
     @NotNull
     private String pwHash;
 
-    // this is where List of books will go. Inserting placeholder so I don't forget
-    // @OneToMany(mappedBy = "user")
-    // private final List<Book> books = new ArrayList<>();
+     @OneToMany(mappedBy = "user")
+     private final List<Book> books = new ArrayList<>();
 
     public User() {};
 
@@ -77,8 +79,7 @@ public class User extends AbstractEntity{
         return encoder.matches(password, pwHash);
     }
 
-    //placeholder for getBooks
-    //public List<Book> getBooks() {
-    // return books;
-    //}
+    public List<Book> getBooks() {
+     return books;
+    }
 }
