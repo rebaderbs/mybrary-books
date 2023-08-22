@@ -3,11 +3,18 @@
 <head>
     <meta charset="UTF-8"/>
     <title>Title</title>
+
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}"/>
+    <link rel="stylesheet" th:href="@{/css/styles.css}"/>
 </head>
 <body>
     <nav th:replace="fragments :: navigation"></nav>
 
-    <hero th:replace="fragments :: hero"></hero>
+    <container>
+            <img class="main-title" src="main-title.png" alt="Mybrary Books" />
+            <button>Sign Up Now</button>
+    </container>
+
 
     <footer th:replace="fragments :: footer"></footer>
 

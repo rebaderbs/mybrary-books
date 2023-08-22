@@ -1,10 +1,15 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org/">
-<head th:replace="fragments :: head">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}"/>
+    <link rel="stylesheet" th:href="@{/css/styles.css}"/>
 </head>
 <body class="container">
 
-<nav th:replace="fragments :: navigation"></nav>
+<nav class="navbar" th:fragment="navigation">This is the navigation</nav>
+
 
 <form method="post">
     <div class="form-group">

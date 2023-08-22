@@ -1,0 +1,27 @@
+body {
+    background-color: #f2eddb;
+}
+
+.btn {
+    background-color: #542434;
+}
+
+.navbar {
+    background-color: #3D5B5D;
+    min-height: 10vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: left;
+    font-size: calc(10px + 2vmin);
+    color: white;
+}
+
+container {
+    padding: 50px;
+}
+
+footer  {
+  background-color: #3D5B5D;
+  color: white;
+}
