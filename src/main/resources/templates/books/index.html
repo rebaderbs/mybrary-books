@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+</head>
+<body>
+<nav th:replace="fragments :: navigation"></nav>
+
+<h1>My Books</h1>
+<div>
+    <div th:each="book: ${books}">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>Book Title</th>
+                <th>Author</th>
+                <th>Format</th>
+            </tr>
+            </thead>
+            <tr th:each="book : ${books}">
+                <td th:text="${book.bookTitle}"></td>
+                <td th:text="${book.bookAuthor}"></td>
+                <td th:text="${book.bookFormat}"></td>
+            </tr>
+        </table>
+    </div>
+    <p th:text="${noBooks}"></p>
+</div>
+
+
+<footer th:replace="fragments :: footer"></footer>
+
+</body>
+</html>

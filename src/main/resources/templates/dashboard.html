@@ -18,10 +18,10 @@
         <th>Format</th>
     </tr>
     </thead>
-    <tr th:each="book : ${books}">
-        <td th:text="${book.bookTitle}"></td>
-        <td th:text="${book.bookAuthor}"></td>
-        <td th:text="${book.bookFormat}"></td>
+    <tr th:each="books : ${book}">
+        <td th:text="${books.bookTitle}"></td>
+        <td th:text="${books.bookAuthor}"></td>
+        <td th:text="${books.bookFormat}"></td>
     </tr>
 </table>
 

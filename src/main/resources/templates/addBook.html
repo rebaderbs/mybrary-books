@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+</head>
+<body>
+<nav th:replace="fragments :: navigation"></nav>
+
+<form method="post">
+    <div class="form-group">
+        <label>Book Title
+            <input class="form-control" type="text" th:field="${booksDTO.bookTitle}" />
+        </label>
+        <p class="error" th:errors="${booksDTO.bookTitle}"></p>
+    </div>
+    <div class="form-group">
+        <label>Author
+            <input class="form-control" type="text" th:field="${booksDTO.bookAuthor}" />
+        </label>
+        <p class="error" th:errors="${booksDTO.bookAuthor}"></p>
+    </div>
+    <div class="form-group">
+        <label>Format (Hardback, Paperback, Digital)
+            <input class="form-control" type="text" th:field="${booksDTO.bookFormat}" />
+        </label>
+        <p class="error" th:errors="${booksDTO.bookFormat}"></p>
+    </div>
+
+    <input type="submit" class="btn btn-primary" value="Save" />
+</form>
+
+<footer th:replace="fragments :: footer"></footer>
+</body>
+</html>
