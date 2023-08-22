@@ -54,7 +54,7 @@ public class AddBookController {
     }
 
     @PostMapping("/addBook")
-    public String processAddBookForm(@ModelAttribute @Valid BooksDTO booksDTO, Errors errors, Model model, HttpServletRequest request) {
+    public String processAddBookForm(@ModelAttribute @Valid BooksDTO booksDTO, Books books, Errors errors, Model model, HttpServletRequest request) {
         User theUser = getUserFromSession(request.getSession());
         model.addAttribute("loggedInUser", theUser);
 

@@ -44,20 +44,28 @@ public class BooksController {
     }
 
     @GetMapping("")
-    public String displayAllBooks(Model model, HttpServletRequest request) {
+    public String displayAllBooks(Model model) {
         model.addAttribute("title", "Your books");
-        User theUser = getUserFromSession(request.getSession());
-        model.addAttribute("loggedInUser", theUser);
-        List<Books> result = theUser.getBooks();
+        model.addAttribute("books", booksRepository.findAll());
 
-        if (result.isEmpty()) {
-            model.addAttribute("noBooks", "Aw shucks! You don't have any books on your shelf. Click Add Book to start your collection!");
-        }
-        else {
-            model.addAttribute("books", theUser.getBooks());
-        }
-        return "books/index";
+        return "books";
     }
+
+//    @GetMapping("")
+//    public String displayAllBooks(Model model, HttpServletRequest request) {
+//        model.addAttribute("title", "Your books");
+//        User theUser = getUserFromSession(request.getSession());
+//        model.addAttribute("loggedInUser", theUser);
+//        List<Books> result = theUser.getBooks();
+//
+//        if (result.isEmpty()) {
+//            model.addAttribute("noBooks", "Aw shucks! You don't have any books on your shelf. Click Add Book to start your collection!");
+//        }
+//        else {
+//            model.addAttribute("books", theUser.getBooks());
+//        }
+//        return "books";
+//    }
 
 
 

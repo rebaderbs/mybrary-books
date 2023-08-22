@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
+import java.io.IOException;
 import java.util.Optional;
 
 @Controller
@@ -23,7 +24,7 @@ public class AuthenticationController {
     @Autowired
     UserRepository userRepository;
 
-    static final String userSessionKey = "user";
+    public static final String userSessionKey = "user";
 
     public User getUserFromSession(HttpSession session) {
         Integer userId = (Integer) session.getAttribute(userSessionKey);
@@ -95,16 +96,16 @@ public class AuthenticationController {
     @PostMapping("/login")
     public String processLoginForm(@ModelAttribute @Valid LoginFormDTO loginFormDTO,
                                    Errors errors, HttpServletRequest request,
-                                   Model model) {
+                                   Model model, User theUser) throws IOException {
 
         if (errors.hasErrors()) {
             model.addAttribute("title", "Log In");
             return "login";
         }
 
-        User theUser = userRepository.findByEmail(loginFormDTO.getEmail());
+        User user = userRepository.findByEmail(loginFormDTO.getEmail());
 
-        if (theUser == null) {
+        if (user == null) {
             errors.rejectValue("email", "email.invalid", "The given email does not exist");
             model.addAttribute("title", "Log In");
             return "login";
@@ -112,18 +113,25 @@ public class AuthenticationController {
 
         String password = loginFormDTO.getPassword();
 
-        if (!theUser.isMatchingPassword(password)) {
+        if (!user.isMatchingPassword(password)) {
             errors.rejectValue("password", "password.invalid", "Invalid password");
             model.addAttribute("title", "Log In");
             return "login";
         }
 
-        setUserInSession(request.getSession(), theUser);
-        model.addAttribute("loggedInUser", theUser);
+        model.addAttribute("logout", "Logout");
+        setUserInSession(request.getSession(), user);
+        model.addAttribute("loggedInUser", user);
 
         return "dashboard";
     }
 
+    @GetMapping("/dashboard")
+    public String renderDashboard(Model model, HttpServletRequest request) {
+        User theUser = getUserFromSession(request.getSession());
+        model.addAttribute("loggedInUser", theUser);
+        return "dashboard";
+    }
 
     @GetMapping("/logout")
     public String logout(HttpServletRequest request)    {

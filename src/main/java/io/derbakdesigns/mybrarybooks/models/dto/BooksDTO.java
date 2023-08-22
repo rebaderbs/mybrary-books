@@ -3,11 +3,13 @@ package io.derbakdesigns.mybrarybooks.models.dto;
 
 import io.derbakdesigns.mybrarybooks.models.Books;
 import io.derbakdesigns.mybrarybooks.models.User;
+import lombok.Data;
 
 import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
+@Data
 public class BooksDTO {
 
     private Books books;

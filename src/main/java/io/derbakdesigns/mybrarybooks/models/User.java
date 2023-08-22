@@ -2,6 +2,7 @@ package io.derbakdesigns.mybrarybooks.models;
 
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
+import lombok.Data;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import javax.persistence.*;
@@ -12,6 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
+@Data
 @Entity
 public class User extends AbstractEntity {
 
@@ -37,16 +39,13 @@ public class User extends AbstractEntity {
     private String pwHash;
 
      @OneToMany(mappedBy = "user")
-     private List<Books> books = new ArrayList<>();
+     private final List<Books> books = new ArrayList<>();
 
 //    @ManyToMany(targetEntity=Books.class, fetch=FetchType.LAZY)
 //    @JoinTable(name="user_book",inverseJoinColumns=@JoinColumn(name="book_id"))
 //    private List<Books> books = new ArrayList<>();
 
-    public User() {};
-
     public User(String firstName, String lastName, String email, String password) {
-        super();
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
@@ -54,7 +53,11 @@ public class User extends AbstractEntity {
     }
 
     public User(String email, String password) {
+        this.email = email;
+        this.pwHash = password;
     }
+
+    public User() {};
 
 //    public int getUserId() {
 //        return userId;
@@ -92,7 +95,7 @@ public class User extends AbstractEntity {
         return encoder.matches(password, pwHash);
     }
 
-    @JsonManagedReference
+//    @JsonManagedReference
     public List<Books> getBooks() {
      return books;
     }

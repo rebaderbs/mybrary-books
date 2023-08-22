@@ -10,20 +10,7 @@
 
 <h1>A list of your books will go here with buttons to add new ones and edit current list</h1>
 
-<table class="table table-striped">
-    <thead>
-    <tr>
-        <th>Book Title</th>
-        <th>Author</th>
-        <th>Format</th>
-    </tr>
-    </thead>
-    <tr th:each="books : ${book}">
-        <td th:text="${books.bookTitle}"></td>
-        <td th:text="${books.bookAuthor}"></td>
-        <td th:text="${books.bookFormat}"></td>
-    </tr>
-</table>
+
 
 <footer th:fragment="footer">This is the footer</footer>
 

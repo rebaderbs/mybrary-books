@@ -3,6 +3,8 @@ package io.derbakdesigns.mybrarybooks.models;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import io.derbakdesigns.mybrarybooks.models.data.BooksRepository;
 import io.derbakdesigns.mybrarybooks.models.data.UserRepository;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.persistence.*;
@@ -11,7 +13,9 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
 
+@EqualsAndHashCode(callSuper = true)
 @Entity
+@Data
 public class Books extends AbstractEntity {
 
 //    @Autowired
@@ -35,13 +39,11 @@ public class Books extends AbstractEntity {
     @NotBlank(message = "Book format is required")
     private String bookFormat;
 
-    @ManyToOne
-    @JoinColumn(name="user_id")
+    @ManyToOne(cascade = CascadeType.ALL)
+//    @JoinColumn(name="user_id")
 //    @NotNull
 //    @Valid
     private User user;
-
-    public Books(){};
 
     public Books(String bookTitle, String bookAuthor, String bookFormat) {
         this.bookTitle = bookTitle;
@@ -50,14 +52,13 @@ public class Books extends AbstractEntity {
     }
 
     public Books(String bookTitle, String bookAuthor, String bookFormat, User user) {
-        super();
         this.bookTitle = bookTitle;
         this.bookAuthor = bookAuthor;
         this.bookFormat = bookFormat;
         this.user = user;
     }
 
-
+    public Books(){};
 
 //    public int getBookId() {
 //        return bookId;
@@ -91,7 +92,7 @@ public class Books extends AbstractEntity {
         this.bookFormat = bookFormat;
     }
 
-    @JsonManagedReference
+//    @JsonManagedReference
     public User getUser() {
         return user;
     }

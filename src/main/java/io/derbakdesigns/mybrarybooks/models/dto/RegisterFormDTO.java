@@ -2,11 +2,14 @@ package io.derbakdesigns.mybrarybooks.models.dto;
 
 
 
+import lombok.Data;
+
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+@Data
 public class RegisterFormDTO extends LoginFormDTO{
 
     @NotNull
