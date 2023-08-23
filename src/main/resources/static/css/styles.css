@@ -17,6 +17,10 @@ body {
     color: white;
 }
 
+.logo {
+    max-height: 100px;
+}
+
 container {
     padding: 50px;
 }

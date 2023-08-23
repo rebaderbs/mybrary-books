@@ -11,8 +11,18 @@
     <nav th:replace="fragments :: navigation"></nav>
 
     <container>
-            <img class="main-title" src="main-title.png" alt="Mybrary Books" />
-            <button>Sign Up Now</button>
+        <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+            <div class="col-10 col-sm-8 col-lg-6">
+                <img src="main-title.png" alt="Mybrary Books" class="d-block mx-lg-auto img-fluid"  />
+            </div>
+            <div class="col-lg-6">
+                <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">Welcome!</h1>
+                <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+                    <a href="/login" th:href="@{/login}" class="btn btn-dark btn-lg px-4 me-md-2">Login</a>
+                    <a href="/register" th:href="@{/register}" class="btn btn-dark btn-lg px-4">Register</a>
+                </div>
+            </div>
+        </div>
     </container>
 
 

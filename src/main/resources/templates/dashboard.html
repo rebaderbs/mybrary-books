@@ -8,10 +8,14 @@
 </head>
 <body>
 
-<nav th:fragment="navigation">This is the navigation</nav>
+<nav th:replace="fragments :: navigation-loggedin"></nav>
 
 <h1>A list of your books will go here with buttons to add new ones and edit current list</h1>
 
+<div class="d-grid gap-2 d-md-flex justify-content-md-center">
+    <a href="/login" th:href="@{/addBook}" class="btn btn-dark btn-lg px-4 me-md-2">Add a Book</a>
+    <a href="/register" th:href="@{/books}" class="btn btn-dark btn-lg px-4">View My Books</a>
+</div>
 
 
 <footer th:fragment="footer">This is the footer</footer>
