@@ -21,9 +21,23 @@ body {
     max-height: 100px;
 }
 
-container {
-    padding: 50px;
+section {
+    background-image: url("/bookshelves.jpg");
+    height: 700px; /* You must set a specified height */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
 }
+
+.my-5 {
+    background-image: url("/bookshelves.jpg");
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+}
+
+
+
 
 footer  {
   background-color: #3D5B5D;

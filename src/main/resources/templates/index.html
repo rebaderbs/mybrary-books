@@ -10,21 +10,48 @@
 <body>
     <nav th:replace="fragments :: navigation"></nav>
 
-    <container>
-        <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
-            <div class="col-10 col-sm-8 col-lg-6">
-                <img src="main-title.png" alt="Mybrary Books" class="d-block mx-lg-auto img-fluid"  />
-            </div>
-            <div class="col-lg-6">
-                <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">Welcome!</h1>
-                <div class="d-grid gap-2 d-md-flex justify-content-md-center">
-                    <a href="/login" th:href="@{/login}" class="btn btn-dark btn-lg px-4 me-md-2">Login</a>
-                    <a href="/register" th:href="@{/register}" class="btn btn-dark btn-lg px-4">Register</a>
-                </div>
+<section>
+    <div class="container my-5">
+        <div class="p-5 text-center bg-body-tertiary rounded-3">
+<!--            <svg class="bi mt-4 mb-3" style="color: var(&#45;&#45;bs-indigo);" width="100" height="100"><use xlink:href="#bootstrap"></use></svg>-->
+            <h1 class="text-body-emphasis">Welcome!</h1>
+            <p class="col-lg-8 mx-auto fs-5 text-muted">
+                Do you have a lot of books at home? Do you sometimes forget what you already own and buy duplicates? Mybrary books is here to help! Designed especially for bibliophiles who need an easy solution to track their books. With Mybrary books, all of your personal books are at your fingertips.
+            </p>
+            <p class="col-lg-8 mx-auto fs-5 text-muted">
+                Ready to get started? Click below to sign up or log in!
+            </p>
+<!--            <div class="d-inline-flex gap-2 mb-5">-->
+<!--                <button class="d-inline-flex align-items-center btn btn-primary btn-lg px-4 rounded-pill" type="button">-->
+<!--                    Call to action-->
+<!--                    <svg class="bi ms-2" width="24" height="24"><use xlink:href="#arrow-right-short"></use></svg>-->
+<!--                </button>-->
+<!--                <button class="btn btn-outline-secondary btn-lg px-4 rounded-pill" type="button">-->
+<!--                    Secondary link-->
+<!--                </button>-->
+<!--            </div>-->
+            <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+                <a href="/login" th:href="@{/login}" class="btn btn-dark btn-lg px-4 me-md-2">Login</a>
+                <a href="/register" th:href="@{/register}" class="btn btn-dark btn-lg px-4">Register</a>
             </div>
         </div>
-    </container>
+    </div>
+</section>
 
+    <div class="px-4 py-5 my-5 text-center">
+<!--        <img class="d-block mx-auto mb-4" src="/docs/5.3/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">-->
+        <h1 class="display-5 fw-bold text-body-emphasis">Centered hero</h1>
+        <div class="col-lg-6 mx-auto">
+            <p class="lead mb-4">Do you have a lot of books at home? Do you sometimes forget what you already own and buy duplicates? Mybrary books is here to help! Designed especially for bibliophiles who need an easy solution to track their books. With Mybrary books, all of your personal books are at your fingertips.</p>
+            <p class="lead mb-4">Ready to get started? Click below to sign up or log in!</p>
+            <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+                <button type="button" class="btn btn-primary btn-lg px-4 gap-3">Login</button>
+                <button type="button" class="btn btn-outline-secondary btn-lg px-4">Register</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="b-example-divider"></div>
 
     <footer th:replace="fragments :: footer"></footer>
 

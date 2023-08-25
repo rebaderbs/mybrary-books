@@ -11,15 +11,16 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 
-@Data
+//@Data
 @Entity
-public class User extends AbstractEntity {
+public class User {
 
-//    @Id
-//    @GeneratedValue(strategy = GenerationType.AUTO)
-//    private int userId;
+    @Id
+    @GeneratedValue
+    private int id;
 
     @NotNull
     @NotBlank(message = "First name is required")
@@ -38,8 +39,8 @@ public class User extends AbstractEntity {
     @NotNull
     private String pwHash;
 
-     @OneToMany(mappedBy = "user")
-     private final List<Books> books = new ArrayList<>();
+//     @OneToMany(mappedBy = "user")
+//     private final List<Books> books = new ArrayList<>();
 
 //    @ManyToMany(targetEntity=Books.class, fetch=FetchType.LAZY)
 //    @JoinTable(name="user_book",inverseJoinColumns=@JoinColumn(name="book_id"))
@@ -59,13 +60,13 @@ public class User extends AbstractEntity {
 
     public User() {};
 
-//    public int getUserId() {
-//        return userId;
-//    }
-//
-//    public void setUserId(int userId) {
-//        this.userId = userId;
-//    }
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getFirstName() {
         return firstName;
@@ -96,7 +97,31 @@ public class User extends AbstractEntity {
     }
 
 //    @JsonManagedReference
-    public List<Books> getBooks() {
-     return books;
+//    public List<Books> getBooks() {
+//     return books;
+//    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", email='" + email + '\'' +
+                ", password='" + pwHash + '\'' +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        User user = (User) o;
+        return id == user.id;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
     }
 }

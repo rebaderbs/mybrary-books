@@ -13,19 +13,20 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
 
-@EqualsAndHashCode(callSuper = true)
+//@EqualsAndHashCode(callSuper = true)
 @Entity
-@Data
-public class Books extends AbstractEntity {
+//@Data
+public class Books {
 
 //    @Autowired
 //    BooksRepository booksRepository;
 //
 //    @Autowired
 //    UserRepository userRepository;
-//    @Id
-//    @GeneratedValue(strategy = GenerationType.IDENTITY)
-//    private int bookId;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int bookId;
 
     @NotNull
     @NotBlank(message = "Book title is required")
@@ -39,11 +40,15 @@ public class Books extends AbstractEntity {
     @NotBlank(message = "Book format is required")
     private String bookFormat;
 
-    @ManyToOne(cascade = CascadeType.ALL)
-//    @JoinColumn(name="user_id")
+    @ManyToOne
+    @JoinColumn(name="id")
 //    @NotNull
 //    @Valid
     private User user;
+
+    @Transient
+    public
+    int id;
 
     public Books(String bookTitle, String bookAuthor, String bookFormat) {
         this.bookTitle = bookTitle;
@@ -60,13 +65,13 @@ public class Books extends AbstractEntity {
 
     public Books(){};
 
-//    public int getBookId() {
-//        return bookId;
-//    }
-//
-//    public void setBookId(int bookId) {
-//        this.bookId = bookId;
-//    }
+    public int getBookId() {
+        return bookId;
+    }
+
+    public void setBookId(int bookId) {
+        this.bookId = bookId;
+    }
 
     public String getBookTitle() {
         return bookTitle;
