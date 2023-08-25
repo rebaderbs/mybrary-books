@@ -21,14 +21,6 @@ body {
     max-height: 100px;
 }
 
-section {
-    background-image: url("/bookshelves.jpg");
-    height: 700px; /* You must set a specified height */
-    background-position: center; /* Center the image */
-    background-repeat: no-repeat; /* Do not repeat the image */
-    background-size: cover; /* Resize the background image to cover the entire container */
-}
-
 .my-5 {
     background-image: url("/bookshelves.jpg");
     background-position: center; /* Center the image */
@@ -36,8 +28,15 @@ section {
     background-size: cover; /* Resize the background image to cover the entire container */
 }
 
-
-
+.main-text {
+    background: rgb(247,247,247);
+    background: linear-gradient(0deg, rgba(247,247,247,0.75) 0%, rgba(255,253,248,0.75) 100%);
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+    padding: 15px;
+}
 
 footer  {
   background-color: #3D5B5D;
