@@ -46,9 +46,9 @@ public class Books {
 //    @Valid
     private User user;
 
-    @Transient
-    public
-    int id;
+//    @Transient
+//    public
+//    int id;
 
     public Books(String bookTitle, String bookAuthor, String bookFormat) {
         this.bookTitle = bookTitle;

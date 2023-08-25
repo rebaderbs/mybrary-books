@@ -27,12 +27,12 @@ public class AuthenticationController {
     public static final String userSessionKey = "user";
 
     public User getUserFromSession(HttpSession session) {
-        Integer userId = (Integer) session.getAttribute(userSessionKey);
-        if (userId == null) {
+        Integer id = (Integer) session.getAttribute(userSessionKey);
+        if (id == null) {
             return null;
         }
 
-        Optional<User> user = userRepository.findById(userId);
+        Optional<User> user = userRepository.findById(id);
 
         if (user.isEmpty()) {
             return null;
@@ -81,7 +81,7 @@ public class AuthenticationController {
 
         User newUser = new User(registerFormDTO.getFirstName(), registerFormDTO.getLastName(), registerFormDTO.getEmail(), registerFormDTO.getPassword());
         userRepository.save(newUser);
-        setUserInSession(request.getSession(), newUser);
+//        setUserInSession(request.getSession(), newUser);
 
         return "dashboard";
     }

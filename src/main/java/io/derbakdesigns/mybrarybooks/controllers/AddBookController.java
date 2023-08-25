@@ -31,12 +31,12 @@ public class AddBookController {
     BooksRepository booksRepository;
 
     public User getUserFromSession(HttpSession session) {
-        Integer userId = (Integer) session.getAttribute(AuthenticationController.userSessionKey);
-        if (userId == null) {
+        Integer id = (Integer) session.getAttribute(AuthenticationController.userSessionKey);
+        if (id == null) {
             return null;
         }
 
-        Optional<User> user = userRepository.findById(userId);
+        Optional<User> user = userRepository.findById(id);
 
         if (user.isEmpty()) {
             return null;
