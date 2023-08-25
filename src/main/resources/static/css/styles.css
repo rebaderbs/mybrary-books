@@ -6,6 +6,10 @@ body {
     background-color: #542434;
 }
 
+.error {
+    color: red;
+}
+
 .navbar {
     background-color: #3D5B5D;
     min-height: 10vh;

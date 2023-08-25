@@ -39,8 +39,8 @@ public class User {
     @NotNull
     private String pwHash;
 
-//     @OneToMany(mappedBy = "user")
-//     private final List<Books> books = new ArrayList<>();
+     @OneToMany(mappedBy = "user")
+     private final List<Books> books = new ArrayList<>();
 
 //    @ManyToMany(targetEntity=Books.class, fetch=FetchType.LAZY)
 //    @JoinTable(name="user_book",inverseJoinColumns=@JoinColumn(name="book_id"))
@@ -97,9 +97,9 @@ public class User {
     }
 
 //    @JsonManagedReference
-//    public List<Books> getBooks() {
-//     return books;
-//    }
+    public List<Books> getBooks() {
+     return books;
+    }
 
     @Override
     public String toString() {
