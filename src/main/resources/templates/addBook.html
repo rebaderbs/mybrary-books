@@ -14,7 +14,7 @@
     <h1>Add book</h1>
     <form method="post">
         <div class="form-group">
-            <label>Book Title
+            <label>Title
                 <input class="form-control" type="text" th:field="${booksDTO.bookTitle}" />
             </label>
             <p class="error" th:errors="${booksDTO.bookTitle}"></p>
@@ -28,7 +28,7 @@
         <div class="form-group">
             <label>Format
                 <select class="form-select" aria-label="Default select example" th:field="${booksDTO.bookFormat}">
-                    <option selected value="Default">Open to select book format</option>
+                    <option selected value="Default">Select book format</option>
                     <option value="Hardback">Hardback</option>
                     <option value="Paperback">Paperback</option>
                     <option value="Digital">Digital</option>
@@ -36,7 +36,7 @@
             </label>
             <p class="error" th:errors="${booksDTO.bookFormat}"></p>
         </div>
-        <input type="submit" class="btn btn-primary" value="Save" />
+        <input type="submit" class="btn btn-dark btn-lg px-4 me-md-2" value="Save" />
     </form>
 </div>
 

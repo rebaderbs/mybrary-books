@@ -6,29 +6,31 @@
     <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}"/>
     <link rel="stylesheet" th:href="@{/css/styles.css}"/>
 </head>
-<body class="container">
+<body>
 
 <nav th:replace="fragments :: navigation"></nav>
 
+<div class="account px-4 py-5 text-center">
+    <h2>Log in to an Account</h2>
+    <form method="post">
+        <div class="form-group">
+            <label th:for="email">Email
+                <input class="form-control" th:field="${loginFormDTO.email}">
+            </label>
+            <p class="error" th:errors="${loginFormDTO.email}"></p>
+        </div>
+        <div class="form-group">
+            <label>Password
+                <input class="form-control" th:field="${loginFormDTO.password}" type="password">
+            </label>
+            <p class="error" th:errors="${loginFormDTO.password}"></p>
+        </div>
 
-<form method="post">
-    <div class="form-group">
-        <label th:for="email">Email
-            <input class="form-control" th:field="${loginFormDTO.email}">
-        </label>
-        <p class="error" th:errors="${loginFormDTO.email}"></p>
-    </div>
-    <div class="form-group">
-        <label>Password
-            <input class="form-control" th:field="${loginFormDTO.password}" type="password">
-        </label>
-        <p class="error" th:errors="${loginFormDTO.password}"></p>
-    </div>
+        <input type="submit" class="btn btn-dark btn-lg px-4 me-md-2" value="Log In" />
+    </form>
+</div>
 
-    <input type="submit" class="btn btn-primary" value="Log In" />
-</form>
-
-<p>Don't have an account? <a href="/register">Register for one.</a></p>
+<p class="text-muted text-center">Don't have an account? <a href="/register">Register for one.</a></p>
 
 <footer th:replace="fragments :: footer"></footer>
 

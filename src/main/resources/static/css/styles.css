@@ -44,11 +44,10 @@ body {
     margin-right: auto;
     width: 70%;
     height: 600px;
-    padding: 15px;
 }
 
 .form-group {
-    padding: 10px 15px;
+    padding: 5px 10px;
     margin: 5px 0;
 }
 
