@@ -2,35 +2,43 @@
 <html lang="en" xmlns:th="https://www.thymeleaf.org/">
 <head>
     <meta charset="UTF-8"/>
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mybrary Books</title>
     <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}"/>
     <link rel="stylesheet" th:href="@{/css/styles.css}"/>
 </head>
 <body>
 <nav th:replace="fragments :: navigation-loggedin"></nav>
 
-<form method="post">
-    <div class="form-group">
-        <label>Book Title
-            <input class="form-control" type="text" th:field="${booksDTO.bookTitle}" />
-        </label>
-        <p class="error" th:errors="${booksDTO.bookTitle}"></p>
-    </div>
-    <div class="form-group">
-        <label>Author
-            <input class="form-control" type="text" th:field="${booksDTO.bookAuthor}" />
-        </label>
-        <p class="error" th:errors="${booksDTO.bookAuthor}"></p>
-    </div>
-    <div class="form-group">
-        <label>Format (Hardback, Paperback, Digital)
-            <input class="form-control" type="text" th:field="${booksDTO.bookFormat}" />
-        </label>
-        <p class="error" th:errors="${booksDTO.bookFormat}"></p>
-    </div>
-
-    <input type="submit" class="btn btn-primary" value="Save" />
-</form>
+<div class="dashboard px-4 py-5 text-center">
+    <h1>Add book</h1>
+    <form method="post">
+        <div class="form-group">
+            <label>Book Title
+                <input class="form-control" type="text" th:field="${booksDTO.bookTitle}" />
+            </label>
+            <p class="error" th:errors="${booksDTO.bookTitle}"></p>
+        </div>
+        <div class="form-group">
+            <label>Author
+                <input class="form-control" type="text" th:field="${booksDTO.bookAuthor}" />
+            </label>
+            <p class="error" th:errors="${booksDTO.bookAuthor}"></p>
+        </div>
+        <div class="form-group">
+            <label>Format
+                <select class="form-select" aria-label="Default select example" th:field="${booksDTO.bookFormat}">
+                    <option selected value="Default">Open to select book format</option>
+                    <option value="Hardback">Hardback</option>
+                    <option value="Paperback">Paperback</option>
+                    <option value="Digital">Digital</option>
+                </select>
+            </label>
+            <p class="error" th:errors="${booksDTO.bookFormat}"></p>
+        </div>
+        <input type="submit" class="btn btn-primary" value="Save" />
+    </form>
+</div>
 
 <footer th:replace="fragments :: footer"></footer>
 </body>

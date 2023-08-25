@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="https://www.thymeleaf.org/">
 <head>
-    <meta charset="UTF-8"/>
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mybrary Books</title>
     <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}"/>
     <link rel="stylesheet" th:href="@{/css/styles.css}"/>
 </head>
@@ -13,6 +13,7 @@
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
+        <div class="text-end">
         <div class="collapse navbar-collapse">
             <ul class="navbar-nav me-auto">
                 <li class="nav-item">
@@ -23,10 +24,15 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#">About</a>
                 </li>
+                <li class="nav-item">
+                    <a href="/login" th:href="@{/register}" class="nav-link">Register</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/register" th:href="@{/login}" class="nav-link">Log In</a>
+                </li>
             </ul>
-            <div class="text-end">
-                <a href="/login" th:href="@{/login}" class="btn btn-outline-light me-2">Login</a>
-                <a href="/register" th:href="@{/register}" class="btn btn-outline-light me-2">Register</a>
+<!--                <a href="/login" th:href="@{/login}" class="btn btn-outline-light me-2">Login</a>-->
+<!--                <a href="/register" th:href="@{/register}" class="btn btn-outline-light me-2">Register</a>-->
             </div>
         </div>
     </div>
@@ -38,6 +44,7 @@
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
+        <div class="text-end">
         <div class="collapse navbar-collapse" id="navbarColor01">
             <ul class="navbar-nav me-auto">
                 <li class="nav-item">
@@ -46,27 +53,46 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" th:href="@{/addBook}">Add Book
+                    <a class="nav-link" th:href="@{/addBook}">Add Book
                         <span class="visually-hidden">(current)</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">About</a>
+                    <a class="nav-link" th:href="@{/books}">My Books</a>
+                </li>
+                <li class="nav-item">
+                    <a th:href="@{/logout}" class="nav-link">Logout</a>
                 </li>
             </ul>
-            <div class="text-end">
-                <a href="/logout" th:href="@{/logout}" class="btn btn-outline-light me-2">Logout</a>
+
             </div>
         </div>
     </div>
 </nav>
 
 
-<footer th:fragment="footer">
-    <div class="container-fluid">
-    <a class="navbar-brand" href="#"><img class="logo" src="logo.png" /></a>
-    </div>
-</footer>
+<!--<footer th:fragment="footer">-->
+<!--    <div class="container-fluid">-->
+<!--    <a class="navbar-brand" href="#"><img class="logo" src="logo.png" /></a>-->
+<!--    </div>-->
+<!--</footer>-->
+
+
+    <footer th:fragment="footer" class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+        <p class="col-md-4 mb-0">© 2023 Derbak Designs</p>
+        <ul class="nav col-md-4 justify-content-end">
+            <li class="nav-item"><a href="#" class="nav-link px-2">Home</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2">Features</a></li>
+<!--            <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Pricing</a></li>-->
+            <li class="nav-item"><a href="#" class="nav-link px-2">FAQs</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2">About</a></li>
+        </ul>
+        <a href="/" class="justify-content-end">
+            <a href="#"><img class="logo" src="logo.png" /></a>
+        </a>
+    </footer>
+
+
 
 <body>
 

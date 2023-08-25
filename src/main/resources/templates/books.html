@@ -2,32 +2,36 @@
 <html lang="en" xmlns:th="https://www.thymeleaf.org/">
 <head>
     <meta charset="UTF-8"/>
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mybrary Books</title>
     <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}"/>
     <link rel="stylesheet" th:href="@{/css/styles.css}"/>
 </head>
 <body>
 <nav th:replace="fragments :: navigation-loggedin"></nav>
 
-<h1>My Books</h1>
-<div>
-    <div>
-        <table class="table table-striped">
-            <thead>
-            <tr>
-                <th>Book Title</th>
-                <th>Author</th>
-                <th>Format</th>
-            </tr>
-            </thead>
-            <tr th:each="book : ${books}">
-                <td th:text="${book.bookTitle}"></td>
-                <td th:text="${book.bookAuthor}"></td>
-                <td th:text="${book.bookFormat}"></td>
-            </tr>
-        </table>
+<h1 class="books-heading text-center">My Books</h1>
+<div class="px-4 py-5 text-center">
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>Book Title</th>
+            <th>Author</th>
+            <th>Format</th>
+        </tr>
+        </thead>
+        <tr th:each="book : ${books}">
+            <td th:text="${book.bookTitle}"></td>
+            <td th:text="${book.bookAuthor}"></td>
+            <td th:text="${book.bookFormat}"></td>
+        </tr>
+    </table>
+</div>
+<p th:text="${noBooks}"></p>
+    <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+        <a th:href="@{/addBook}" class="btn btn-dark btn-lg px-4 me-md-2">Add a Book</a>
     </div>
-    <p th:text="${noBooks}"></p>
+
 </div>
 
 
