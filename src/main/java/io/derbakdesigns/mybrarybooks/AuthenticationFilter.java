@@ -21,7 +21,7 @@ public class AuthenticationFilter implements HandlerInterceptor {
     @Autowired
     AuthenticationController authenticationController;
 
-    private static final List<String> whitelist = Arrays.asList("/login", "/register", "/logout", "/css");
+    private static final List<String> whitelist = Arrays.asList("/index", "/login", "/register", "/logout", "/css");
 
     private static boolean isWhitelisted(String path) {
         for (String pathRoot : whitelist) {
@@ -32,14 +32,23 @@ public class AuthenticationFilter implements HandlerInterceptor {
         return false;
     }
 
+//    private static final List<String> notAllowedList = Arrays.asList("/dashboard", "/books", "/addBook");
+//
+//    private static boolean isAllowed(String path) {
+//        for (String pathRoot : notAllowedList) {
+//            if (path.startsWith(pathRoot)) {
+//                return false;
+//            }
+//        }
+//        return true;
+//    }
+
     @Override
     public boolean preHandle(HttpServletRequest request,
                              HttpServletResponse response,
                              Object handler) throws IOException {
 
-        // Don't require sign-in for whitelisted pages
         if (isWhitelisted(request.getRequestURI())) {
-            // returning true indicates that the request may proceed
             return true;
         }
 
