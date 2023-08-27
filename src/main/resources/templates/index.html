@@ -21,7 +21,8 @@
         <div class="main-text rounded-3">
             <h1 class="display-5 text-body-emphasis">Welcome!</h1>
             <div class="col-lg-6 mx-auto">
-                <p class="lead mb-4 text-body-emphasis">Do you have a lot of books at home? Do you sometimes forget what you already own and buy duplicates? Mybrary books is here to help! Designed especially for bibliophiles who need an easy solution to track their books. With Mybrary books, all of your personal books are at your fingertips.</p>
+                <p class="lead mb-4 text-body-emphasis">Do you have a lot of books at home? Do you sometimes forget what you already own and buy duplicates?</p>
+                <p class="lead mb-4 text-body-emphasis">Mybrary books is here to help! Designed especially for bibliophiles who need an easy solution to track their books. With Mybrary books, all of your personal books are at your fingertips.</p>
                 <p class="lead mb-4 text-body-emphasis">Ready to get started? Click below to sign up or log in!</p>
                 <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
                     <a href="/login" th:href="@{/login}" class="btn btn-dark btn-lg px-4 me-md-2">Login</a>
@@ -33,9 +34,43 @@
 
     <div class="b-example-divider"></div>
 
+
+
+    <section class="h-75">
+        <div class="container py-5 h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col col-lg-9 col-xl-7">
+                    <div class="card" style="border-radius: 15px;">
+                        <div class="card-body p-5">
+
+                            <div class="text-center mb-4 pb-2">
+                                <img src="book.png"
+                                     alt="Bulb" width="100">
+                            </div>
+
+                            <figure class="text-center mb-0">
+                                <blockquote class="blockquote">
+                                    <p class="pb-3">
+                                        <i class="fas fa-quote-left fa-xs text-primary"></i>
+                                        <span class="lead font-italic">Read. Read anything. Read the things they say are good for you, and the things they claim are junk. You'll find what you need to find. Just read.</span>
+                                        <i class="fas fa-quote-right fa-xs text-primary"></i>
+                                    </p>
+                                </blockquote>
+                                <figcaption class="blockquote-footer mb-0">
+                                    Neil Gaiman
+                                </figcaption>
+                            </figure>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <div class="about px-4 py-5 text-center">
-        <h3>About</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <h1 class="display-6">About</h1>
+        <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
     </div>
 
     <footer th:replace="fragments :: footer"></footer>
