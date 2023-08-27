@@ -70,7 +70,7 @@ public class AddBookController {
             return "addBook";
         }
 
-        Books book = new Books(booksDTO.getBookTitle(), booksDTO.getBookAuthor(), booksDTO.getBookFormat());
+        Books book = new Books(booksDTO.getBookTitle(), booksDTO.getBookAuthor(), booksDTO.getBookFormat(), theUser);
         booksRepository.save(book);
 
         return "dashboard";

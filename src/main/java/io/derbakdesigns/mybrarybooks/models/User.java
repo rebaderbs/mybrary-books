@@ -42,7 +42,8 @@ public class User {
 
 //    @ManyToMany(targetEntity=Books.class, fetch=FetchType.LAZY)
 //    @JoinTable(name="user_book",inverseJoinColumns=@JoinColumn(name="book_id"))
-//    private List<Books> books = new ArrayList<>();
+    @OneToMany(mappedBy = "user")
+    private List<Books> books = new ArrayList<>();
 
     public User(String firstName, String lastName, String email, String password) {
         this.firstName = firstName;
@@ -95,9 +96,9 @@ public class User {
     }
 
 //    @JsonManagedReference
-//    public List<Books> getBooks() {
-//     return books;
-//    }
+    public List<Books> getBooks() {
+     return books;
+    }
 
     @Override
     public String toString() {
