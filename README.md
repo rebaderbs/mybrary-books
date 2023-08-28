@@ -33,6 +33,11 @@ Java, Spring Boot, Thymeleaf, MySQL, Hibernate, Bootstrap, HTML, CSS, Javascript
 * Add a loan feature, so users can lend books to their friends and family and keep track of what is out
 * Style the project with a front-end framework (Angular, Vue, React) rather than Thymleaf
 
+## Image Credits
+- Homepage Background: Photo by <a href="https://unsplash.com/@pickawood?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Pickawood</a> on <a href="https://unsplash.com/photos/YbLitAY8bPA?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+- Homepage Quote section [books icon](https://www.flaticon.com/free-icon/book_3330314?term=book&page=1&position=16&origin=tag&related_id=3330314)
+- Logos: created by me!
+  
 
 ## Screenshots
 ![localhost_8080](https://github.com/rebaderbs/mybrary-books/assets/106853517/3aaa5d19-17c6-4387-9e8a-11197fbdb21a)
