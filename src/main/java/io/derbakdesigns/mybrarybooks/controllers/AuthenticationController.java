@@ -45,6 +45,12 @@ public class AuthenticationController {
         session.setAttribute(userSessionKey, user.getId());
     }
 
+    @GetMapping("/about")
+    public String about(Model model) {
+        model.addAttribute("title", "About");
+        return "about";
+    }
+
     @GetMapping("/register")
     public String displayRegistrationForm(Model model)  {
         model.addAttribute(new RegisterFormDTO());
@@ -136,7 +142,7 @@ public class AuthenticationController {
     @GetMapping("/logout")
     public String logout(HttpServletRequest request)    {
         request.getSession().invalidate();
-        return "redirect:/";
+        return "index";
     }
 
 }

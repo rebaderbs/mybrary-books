@@ -17,28 +17,31 @@
 <body>
 <nav th:replace="fragments :: navigation-loggedin"></nav>
 
-<h1 class="books-heading text-center">My Books</h1>
-<div class="px-4 py-5 text-center">
-    <table id="sortTable" class="table table-striped">
-        <thead>
-        <tr>
-            <th>Book Title</th>
-            <th>Author</th>
-            <th>Format</th>
-        </tr>
-        </thead>
-        <tr th:each="book : ${books}">
-            <td th:text="${book.bookTitle}"></td>
-            <td th:text="${book.bookAuthor}"></td>
-            <td th:text="${book.bookFormat}"></td>
-        </tr>
-    </table>
-</div>
-<p class="lead text-center" th:text="${noBooks}"></p>
-    <div class="d-grid gap-2 d-md-flex justify-content-md-center">
-        <a th:href="@{/addBook}" class="btn btn-dark btn-lg px-4 me-md-2">Add a Book</a>
-    </div>
 
+<div class="books px-4 py-5 text-center">
+    <h1 class="books-heading display-6 text-center">My Books</h1>
+    <div class="px-4 py-5 text-center">
+        <table id="sortTable" class="table table-striped">
+            <thead>
+            <tr>
+                <th>Book Title</th>
+                <th>Author</th>
+                <th>Format</th>
+            </tr>
+            </thead>
+            <tr th:each="book : ${books}">
+                <td th:text="${book.bookTitle}"></td>
+                <td th:text="${book.bookAuthor}"></td>
+                <td th:text="${book.bookFormat}"></td>
+            </tr>
+        </table>
+    </div>
+    <p class="lead text-center" th:text="${noBooks}"></p>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+            <a th:href="@{/addBook}" class="btn btn-dark btn-lg px-4 me-md-2">Add a Book</a>
+        </div>
+
+    </div>
 </div>
 
 

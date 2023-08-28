@@ -59,6 +59,13 @@ body {
     height: 600px;
 }
 
+.books {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
 .form-group {
     padding: 5px 10px;
     margin: 5px 0;

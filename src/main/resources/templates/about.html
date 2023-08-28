@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mybrary Books</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}"/>
+    <link rel="stylesheet" th:href="@{/css/styles.css}"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="script" th:href="@{/js/scripts.js}"/>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/dataTables.bootstrap4.min.css">
+    <script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.22/js/dataTables.bootstrap4.min.js"></script>
+</head>
+<body>
+    <nav th:replace="fragments :: navigation"></nav>
+
+
+    <div class="about px-4 py-5 text-center">
+        <h1 class="display-5 text-body-emphasis">About</h1>
+        <br>
+        <p  class="lead text-body-emphasis">
+            Discover the Magic of Your Personal Library
+            <p class="lead">
+                Welcome to Mybrary Books, the ultimate companion for every book enthusiast, collector, and bibliophile. Founded in 2023 by a dedicated book lover, our app is designed with a profound appreciation for the stories that shape us and the shelves that hold them.
+            </p>
+        </p>
+        <p  class="lead text-body-emphasis">
+            Our Story
+            <p class="lead">
+                At Mybrary Books, our story begins with a simple yet powerful idea: to create a space where your personal book collection can be celebrated and organized. We understand the bond between a reader and their books, the countless emotions bound within the pages, and the memories that each spine holds.
+            </p>
+        </p>
+        <p  class="lead text-body-emphasis">
+            Key Features
+            <p class="lead">
+                Effortless Cataloging: Mybrary Books offers a user-friendly interface for you to effortlessly catalog your books. Through a simple form, you can input essential details like the title, author, and format of each book. Your collection, meticulously organized.
+                </p>
+            <p class="lead">
+                Your Digital Haven: With Mybrary Books, your entire collection is just a tap away. Access your cataloged books anytime and anywhere, ensuring you never purchase duplicates and you always know what gems grace your shelves. With a search functionality, you can easily find a book on your shelf, even if you have hundreds listed.
+                </p>
+            <p class="lead">
+                Backup and Sync: We understand that your collection is precious. Safeguard it with our seamless backup and sync functionality, ensuring your catalog is secure across devices.
+            </p>
+        </p>
+        <p  class="lead text-body-emphasis">
+            Embark on the Journey
+            <p class="lead">
+                While Mybrary Books currently focuses on providing you with a streamlined platform to create a detailed list of your beloved books, we're committed to building the future of book collections. Our team is dedicated to continuous improvement, and we're excited to announce that features to explore, discover, and engage with the reading community are on the horizon.
+            </p>
+        </p>
+    </div>
+
+    <footer th:replace="fragments :: footer"></footer>
+
+</body>
+</html>
