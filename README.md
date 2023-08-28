@@ -28,6 +28,7 @@ Java, Spring Boot, Thymeleaf, MySQL, Hibernate, Bootstrap, HTML, CSS, Javascript
 ## Future Development
 * Complete a UX/UI Design audit on the entire project and test with actual users, which will utilize the skills I learned from my Google UX Design certificate
 * User able to edit and delete books on their shelf
+* Users able to mark a book as "read" or "unread"
 * Utilize a book api so user doesn't need to manually enter the book information
 * Add a social aspect, so users can connect with friends and see what books are on their shelf
 * Add a loan feature, so users can lend books to their friends and family and keep track of what is out
