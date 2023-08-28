@@ -15,7 +15,7 @@ Non-authenticated users are able to browse all farms but cannot place orders. An
 ## TECH STACK
 Java, Spring Boot, Thymeleaf, MySQL, Hibernate, Bootstrap, HTML, CSS, Javascript
 
-## Current Features
+## Current Features (MVP)
 <!--
 - Full CRUD database operations (Create, Read, Update, Delete)
 -->
@@ -26,11 +26,12 @@ Java, Spring Boot, Thymeleaf, MySQL, Hibernate, Bootstrap, HTML, CSS, Javascript
 - The web application is fully functional and responsive in a mobile view 
 
 ## Future Development
-* Style the project with a front-end framework (Angular, Vue, React) rather than Thymleaf
+* Complete a UX/UI Design audit on the entire project and test with actual users, which will utilize the skills I learned from my Google UX Design certificate
 * User able to edit and delete books on their shelf
 * Utilize a book api so user doesn't need to manually enter the book information
 * Add a social aspect, so users can connect with friends and see what books are on their shelf
 * Add a loan feature, so users can lend books to their friends and family and keep track of what is out
+* Style the project with a front-end framework (Angular, Vue, React) rather than Thymleaf
 
 
 ## Screenshots
