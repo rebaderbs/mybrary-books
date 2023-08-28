@@ -59,7 +59,7 @@ public class BooksController {
         List<Books> result = theUser.getBooks();
 
         if (result.isEmpty()) {
-            model.addAttribute("noBooks", "Aw shucks! You don't have any books on your shelf. Click Add Book to start your collection!");
+            model.addAttribute("noBooks", "Aw shucks! You don't have any books on your shelf. Click Add a Book to start your collection!");
         }
         else {
             model.addAttribute("books", theUser.getBooks());
